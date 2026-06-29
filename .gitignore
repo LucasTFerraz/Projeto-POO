@@ -3,6 +3,7 @@
 # Publicação controlada — para publicar um arquivo, remover
 # a linha correspondente, depois: git add <arquivo> && git commit
 # ============================================================
+notas/
 
 # ── Notebooks solução — todos bloqueados ──────────────────
 # Remover cada linha 24h após ministrar a aula correspondente.
