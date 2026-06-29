@@ -11,6 +11,15 @@ notas/notas-aula-02-solucao.ipynb
 notas/notas-aula-03-solucao.ipynb
 notas/notas-aula-04-solucao.ipynb
 
+# ── Aula 1 ────────────────────────────────────────────────
+# Véspera: remover teaser, publicar.
+# Logo após a aula: remover notebook + exercicios, publicar.
+notas/notas-aula-01.ipynb
+exercicios/aula-01/
+dados/aula-01/
+cheatsheets/ref-controle-fluxo.md
+cheatsheets/ref-tipos-operadores.md
+
 # ── Aula 2 ────────────────────────────────────────────────
 # Véspera: remover teaser, publicar.
 # Logo após a aula: remover notebook + exercicios, publicar.
