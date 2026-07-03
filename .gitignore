@@ -23,32 +23,28 @@ cheatsheets/ref-tipos-operadores.md
 
 # ── Aula 2 ────────────────────────────────────────────────
 # Véspera: remover teaser, publicar.
-# Logo após a aula: remover notebook + exercicios, publicar.
-# (ref-controle-fluxo.md já está publicada; a atualização
-#  entra no commit normal depois da aula, sem mexer aqui.)
+# Logo após a aula: remover notebook + exercicios + cheatsheets, publicar.
 pre-aula/teaser-aula-02.md
 notas/notas-aula-02.ipynb
 exercicios/aula-02/
+cheatsheets/ref-colecoes.md
+cheatsheets/ref-funcoes.md
 dados/aula-02/
 
 # ── Aula 3 ────────────────────────────────────────────────
-# Véspera: remover teaser, publicar.
-# Logo após a aula: remover notebook + exercicios + cheatsheets, publicar.
 pre-aula/teaser-aula-03.md
 notas/notas-aula-03.ipynb
 exercicios/aula-03/
-cheatsheets/ref-colecoes.md
-cheatsheets/ref-funcoes.md
+cheatsheets/ref-recursao-excecoes-arquivos.md
 dados/aula-03/
 
 # ── Aula 4 ────────────────────────────────────────────────
-# Véspera: remover teaser, publicar.
-# Logo após a aula: remover notebook + exercicios + cheatsheet, publicar.
 pre-aula/teaser-aula-04.md
 notas/notas-aula-04.ipynb
 exercicios/aula-04/
-cheatsheets/ref-recursao-excecoes-arquivos.md
+cheatsheets/ref-idiomatico.md
 dados/aula-04/
+
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -235,4 +231,3 @@ ipython_config.py
 
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
-
