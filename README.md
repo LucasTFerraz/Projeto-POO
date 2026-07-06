@@ -40,6 +40,7 @@ use o Python online em https://www.online-python.com.
 
 ```
 pre-aula/          Leia NA NOITE ANTERIOR a cada aula (≤ 5 min)
+codigo-aulas/      Arquivos de código desenvolvidos durante as aulas
 notas/             Notebooks pós-aula — abrir no VS Code após a aula
 cheatsheets/       Referência rápida por tópico — consulte durante os exercícios
 exercicios/        Prática graduada: básico → médio → avançado
