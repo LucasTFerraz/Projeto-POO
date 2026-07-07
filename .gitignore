@@ -6,7 +6,6 @@
 
 # ── Notebooks solução — todos bloqueados ──────────────────
 # Remover cada linha 24h após ministrar a aula correspondente.
-notas/notas-aula-01-solucao.ipynb
 notas/notas-aula-02-solucao.ipynb
 notas/notas-aula-03-solucao.ipynb
 notas/notas-aula-04-solucao.ipynb
@@ -14,18 +13,7 @@ notas/log.txt
 notas/log_exemplo.txt
 notas/log_aula03.txt
 
-
-# ── Aula 2 ────────────────────────────────────────────────
-# Véspera: remover teaser, publicar.
-# Logo após a aula: remover notebook + exercicios + cheatsheets, publicar.
-notas/notas-aula-02.ipynb
-exercicios/aula-02/
-cheatsheets/ref-colecoes.md
-cheatsheets/ref-funcoes.md
-dados/aula-02/
-
 # ── Aula 3 ────────────────────────────────────────────────
-pre-aula/teaser-aula-03.md
 notas/notas-aula-03.ipynb
 exercicios/aula-03/
 cheatsheets/ref-recursao-excecoes-arquivos.md
