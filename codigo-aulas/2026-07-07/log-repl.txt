@@ -1,0 +1,490 @@
+leopoldo@MacBook-Pro-de-Leopoldo 2026-07-07 % python3
+Python 3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+Cmd click to launch VS Code Native REPL
+>>> frutas = ["maçã", "laranja", "banana"]
+>>> frutas
+['maçã', 'laranja', 'banana']
+>>> type(frutas)
+<class 'list'>
+>>> frutas[0]
+'maçã'
+>>> frutas[1]
+'laranja'
+>>> frutas[2]
+'banana'
+>>> frutas[3]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    frutas[3]
+    ~~~~~~^^^
+IndexError: list index out of range
+>>> frutas[-1]
+'banana'
+>>> frutas[-2]
+'laranja'
+>>> len(frutas)
+3
+>>> frutas.append("uva")
+>>> frutas
+['maçã', 'laranja', 'banana', 'uva']
+>>> len(frutas)
+4
+>>> frutas.append("kiwi")
+>>> frutas
+['maçã', 'laranja', 'banana', 'uva', 'kiwi']
+>>> frutas.pop()
+'kiwi'
+>>> frutas
+['maçã', 'laranja', 'banana', 'uva']
+>>> ultimaFrutaDaLista = frutas.pop()
+>>> ultimaFrutaDaLista
+'uva'
+>>> frutas
+['maçã', 'laranja', 'banana']
+>>> "uva" in frutas
+False
+>>> "laranja" in frutas
+True
+>>> frutas.append("kiwi")
+>>> frutas.append("uva")
+>>> len(frutas)
+5
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva']
+>>> lista[inicio:fim]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    lista[inicio:fim]
+    ^^^^^
+NameError: name 'lista' is not defined. Did you mean: 'list'?
+>>> frutas[1:3]
+['laranja', 'banana']
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva']
+>>> frutas[:2]
+['maçã', 'laranja']
+>>> frutas[2:]
+['banana', 'kiwi', 'uva']
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva']
+>>> frutas[:]
+['maçã', 'laranja', 'banana', 'kiwi', 'uva']
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva']
+>>> outra = frutas
+>>> outra
+['maçã', 'laranja', 'banana', 'kiwi', 'uva']
+>>> x = 3
+>>> y = x
+>>> y
+3
+>>> x = 4
+>>> x
+4
+>>> y
+3
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva']
+>>> outra
+['maçã', 'laranja', 'banana', 'kiwi', 'uva']
+>>> frutas.append("limão")
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão']
+>>> outra
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão']
+>>> hash(outra)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    hash(outra)
+    ~~~~^^^^^^^
+TypeError: unhashable type: 'list'
+>>> id(frutas)
+4300098112
+>>> hashcode(frutas)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    hashcode(frutas)
+    ^^^^^^^^
+NameError: name 'hashcode' is not defined
+>>> hash_code(frutas)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    hash_code(frutas)
+    ^^^^^^^^^
+NameError: name 'hash_code' is not defined
+>>> hashCode(frutas)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    hashCode(frutas)
+    ^^^^^^^^
+NameError: name 'hashCode' is not defined
+>>> id(frutas)
+4300098112
+>>> id(outra)
+4300098112
+>>> id(x)
+4310147960
+>>> id(y)
+4310147928
+>>> outra = frutas[:]
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão']
+>>> outra
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão']
+>>> frutas.append("goiaba")
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão', 'goiaba']
+>>> outra
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão']
+>>> outra.append("ameixa")
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão', 'goiaba']
+>>> outra
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão', 'ameixa']
+>>> L = [1,2,3]
+>>> M = L
+>>> M.append(4)
+>>> L
+[1, 2, 3, 4]
+>>> M
+[1, 2, 3, 4]
+>>> N = L[:]
+>>> L.append(5)
+>>> M
+[1, 2, 3, 4, 5]
+>>> L
+[1, 2, 3, 4, 5]
+>>> N
+[1, 2, 3, 4]
+>>> x, y = 0, 0
+>>> x
+0
+>>> y
+0
+>>> trajetoria = [(x,y)]
+>>> trajetoria
+[(0, 0)]
+>>> x+=3
+>>> x
+3
+>>> trajetoria.append( (x,y) )
+>>> trajetoria
+[(0, 0), (3, 0)]
+>>> x+=2
+>>> trajetoria.append( (x,y) )
+>>> trajetoria
+[(0, 0), (3, 0), (5, 0)]
+>>> L = [0,1,2,"0","String", True, 2<3, ['a','b','c']]
+>>> L
+[0, 1, 2, '0', 'String', True, True, ['a', 'b', 'c']]
+>>> type(L)
+<class 'list'>
+>>> type(L[0])
+<class 'int'>
+>>> type(L[3])
+<class 'str'>
+>>> type(L[5])
+<class 'bool'>
+>>> type(L[7])
+<class 'list'>
+>>> M = [[0,0], [0,0]]
+>>> M
+[[0, 0], [0, 0]]
+>>> M[0]
+[0, 0]
+>>> M[1]
+[0, 0]
+>>> A = [1,2]
+>>> B = [2,3]
+>>> M = [ A, B ]
+>>> M
+[[1, 2], [2, 3]]
+>>> M[0]
+[1, 2]
+>>> M[1]
+[2, 3]
+>>> M[0][1]
+2
+>>> M[1][0]
+2
+>>> M[1][1]
+3
+>>> LADO_GRADE = 10
+>>> M = [ [0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0]] 
+>>> M
+[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+>>> LINHA = [[0] * LADO_GRADE]
+>>> LINHA
+[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+>>> LINHA = [0] * LADO_GRADE
+>>> LINHA
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+>>> LINHA = [0,0,0,0,0,0,0,0,0,0]
+>>> LINHA
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+>>> LINHA = ['oi'] * LADO_GRADE
+>>> LINHA
+['oi', 'oi', 'oi', 'oi', 'oi', 'oi', 'oi', 'oi', 'oi', 'oi']
+>>> LINHA = [0] * LADO_GRADE
+>>> grade = [[0] * LADO_GRADE] * LADO_GRADE
+>>> grade
+[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+>>> len(grade)
+10
+>>> len(grade[0])
+10
+>>> grade[0][0]
+0
+>>> grade
+[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+>>> grade[0][0] = 9
+>>> grade[0][0]
+9
+>>> grade
+[[9, 0, 0, 0, 0, 0, 0, 0, 0, 0], [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+>>> grade_2 = [LINHA] * LADO_GRADE
+>>> grade_2
+[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+>>> grade_2[0][0] = 5
+>>> grade_2
+[[5, 0, 0, 0, 0, 0, 0, 0, 0, 0], [5, 0, 0, 0, 0, 0, 0, 0, 0, 0], [5, 0, 0, 0, 0, 0, 0, 0, 0, 0], [5, 0, 0, 0, 0, 0, 0, 0, 0, 0], [5, 0, 0, 0, 0, 0, 0, 0, 0, 0], [5, 0, 0, 0, 0, 0, 0, 0, 0, 0], [5, 0, 0, 0, 0, 0, 0, 0, 0, 0], [5, 0, 0, 0, 0, 0, 0, 0, 0, 0], [5, 0, 0, 0, 0, 0, 0, 0, 0, 0], [5, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+>>> id(grade_2[0])
+4302908864
+>>> id(grade_2[1])
+4302908864
+>>> [0] * 5
+[0, 0, 0, 0, 0]
+>>> [0 for i in range(5)]
+[0, 0, 0, 0, 0]
+>>> [0 for _ in range(5)]
+[0, 0, 0, 0, 0]
+>>> [i for i in range(5)]
+[0, 1, 2, 3, 4]
+>>> [i**2 for i in range(5)]
+[0, 1, 4, 9, 16]
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão', 'goiaba']
+>>> frutas[0]
+'maçã'
+>>> frutas[0].upper()
+'MAÇÃ'
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão', 'goiaba']
+>>> [fruta.upper() for fruta in frutas]
+['MAÇÃ', 'LARANJA', 'BANANA', 'KIWI', 'UVA', 'LIMÃO', 'GOIABA']
+>>> frutas
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão', 'goiaba']
+>>> grade = [[0] * LADO_GRADE for _ in range(LADO_GRADE)]
+>>> grade
+[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+>>> LADO_GRADE = 3
+>>> grade = [[0] * LADO_GRADE for _ in range(LADO_GRADE)]
+>>> LADO_GRADE = 3
+>>> grade
+[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+>>> grade[0][0] = 9
+>>> grade
+[[9, 0, 0], [0, 0, 0], [0, 0, 0]]
+>>> outra = frutas
+>>> [fruta[0] for fruta in frutas] 
+['m', 'l', 'b', 'k', 'u', 'l', 'g']
+>>> [fruta for fruta in frutas]
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão', 'goiaba']
+>>> frutas[:]
+['maçã', 'laranja', 'banana', 'kiwi', 'uva', 'limão', 'goiaba']
+>>> nome = "Leopoldo"
+>>> nome[0]
+'L'
+>>> nome[1]
+'e'
+>>> nome[9]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    nome[9]
+    ~~~~^^^
+IndexError: string index out of range
+>>> nomeL = ['L','e','o','p','o','l','d','o']
+>>> nomeL
+['L', 'e', 'o', 'p', 'o', 'l', 'd', 'o']
+>>> nome
+'Leopoldo'
+>>> nomeL[1] = i
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    nomeL[1] = i
+               ^
+NameError: name 'i' is not defined. Did you mean: 'id'?
+>>> nomeL[1] = 'i'
+>>> nomeL
+['L', 'i', 'o', 'p', 'o', 'l', 'd', 'o']
+>>> nome[1] 
+'e'
+>>> nome[1] = 'i'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    nome[1] = 'i'
+    ~~~~^^^
+TypeError: 'str' object does not support item assignment
+>>> nome[:1]+'i'+nome[2:]
+'Liopoldo'
+>>> nome[0:1]+'i'+nome[2:8]
+'Liopoldo'
+>>> nome
+'Leopoldo'
+>>> posicao = (0,0)
+>>> corRGB = (255,0,255)
+>>> corRGB
+(255, 0, 255)
+>>> RED = corRGB[0]
+>>> RED
+255
+>>> corRGB[2]
+255
+>>> corRGB[1]
+0
+>>> corRGB.append(30)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    corRGB.append(30)
+    ^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'append'
+>>> corRGB[1] = 255
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    corRGB[1] = 255
+    ~~~~~~^^^
+TypeError: 'tuple' object does not support item assignment
+>>> T = (36)
+>>> T
+36
+>>> T[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    T[0]
+    ~^^^
+TypeError: 'int' object is not subscriptable
+>>> trajetoria
+[(0, 0), (3, 0), (5, 0)]
+>>> trajetoria[0]
+(0, 0)
+>>> trajetoria[0][0] = 2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    trajetoria[0][0] = 2
+    ~~~~~~~~~~~~~^^^
+TypeError: 'tuple' object does not support item assignment
+>>> posicao
+(0, 0)
+>>> posicao = (3,7)
+>>> posicao
+(3, 7)
+>>> px = posicao[0]
+>>> py = posicao[1]
+>>> px, py = posicao
+>>> px = posicao[0]
+>>> py = posicao[1]
+>>> px
+3
+>>> py
+7
+>>> dx, dy = posicao
+>>> dx
+3
+>>> dy
+7
+>>> dx, dy = (2,4)
+>>> dx
+2
+>>> dy
+4
+>>> pontuacao = [12,20,30]
+>>> pontuacao[0]
+12
+>>> pontuacao
+[12, 20, 30]
+>>> pontuacao = { "Pedro" : 12, "Cesar" : 20, "Igor" : 30 }
+>>> pontuacao
+{'Pedro': 12, 'Cesar': 20, 'Igor': 30}
+>>> pontuacao['Pedro']
+12
+>>> pontuacao['Cesar']
+20
+>>> pontuacao['Lucas']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    pontuacao['Lucas']
+    ~~~~~~~~~^^^^^^^^^
+KeyError: 'Lucas'
+>>> "banana" in frutas
+True
+>>> 12 in pontuacao
+False
+>>> 'Pedro' in pontuacao
+True
+>>> 'Lucas' in pontuacao
+False
+>>> pontuacao.get('Lucas', 0)
+0
+>>> pontuacao.get('Igor', 0)
+30
+>>> pontuacao['Lucas'] = 15
+>>> pontuacao
+{'Pedro': 12, 'Cesar': 20, 'Igor': 30, 'Lucas': 15}
+>>> pontuacao['Pedro'] = 14
+>>> pontuacao
+{'Pedro': 14, 'Cesar': 20, 'Igor': 30, 'Lucas': 15}
+>>> len(pontuacao)
+4
+>>> pontuacao['Pedro'] = 15
+>>> len(pontuacao)
+4
+>>> pontuacao
+{'Pedro': 15, 'Cesar': 20, 'Igor': 30, 'Lucas': 15}
+>>> for n in pontuacao
+  File "<stdin>", line 1
+    for n in pontuacao
+                      ^
+SyntaxError: expected ':'
+>>> for n in pontuacao:
+... print(n)
+  File "<stdin>", line 2
+    print(n)
+    ^^^^^
+IndentationError: expected an indented block after 'for' statement on line 1
+>>> for n in pontuacao:
+...     print(n)
+... 
+Pedro
+Cesar
+Igor
+Lucas
+>>> for nome, pts in pontuacao:
+...     print(nome)
+...     print(pts)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    for nome, pts in pontuacao:
+        ^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+>>> for nome, pts in pontuacao.items():
+...     print(nome)
+...     print(pts)
+... 
+Pedro
+15
+Cesar
+20
+Igor
+30
+Lucas
+15
+>>> for nome in pontuacao.items():
+...     print(nome)
+... 
+('Pedro', 15)
+('Cesar', 20)
+('Igor', 30)
+('Lucas', 15)
+>>> 
