@@ -6,18 +6,7 @@
 
 # ── Notebooks solução — todos bloqueados ──────────────────
 # Remover cada linha 24h após ministrar a aula correspondente.
-notas/notas-aula-03-solucao.ipynb
 notas/notas-aula-04-solucao.ipynb
-notas/log.txt
-notas/log_exemplo.txt
-notas/log_aula03.txt
-
-# ── Aula 4 ────────────────────────────────────────────────
-notas/notas-aula-04.ipynb
-exercicios/aula-04/
-cheatsheets/ref-idiomatico.md
-dados/aula-04/
-
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
