@@ -1,10 +1,5 @@
 # Referência rápida — Recursão, Exceções e Arquivos
 
-> Criado após a Aula 3. Cobre recursão (CB+CR), flood fill, try/except, exceções customizadas
-> e `with open`.
-
----
-
 ## Recursão: o padrão CB + CR
 
 ```python

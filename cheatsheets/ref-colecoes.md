@@ -1,7 +1,5 @@
 # Referência rápida — Coleções
 
----
-
 ## Lista: operações essenciais
 
 ```python

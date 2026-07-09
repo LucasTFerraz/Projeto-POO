@@ -1,7 +1,5 @@
 # Referência rápida — Funções
 
----
-
 ## Definir e chamar
 
 ```python

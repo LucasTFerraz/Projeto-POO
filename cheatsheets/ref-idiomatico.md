@@ -1,10 +1,5 @@
 # Referência rápida — Python idiomático
 
-> Criado após a Aula 4. Cobre comprehensions (lista/tupla/dict), `*args`/`**kwargs`,
-> `enumerate`/`zip`, e `map`/`filter`/`reduce`.
-
----
-
 ## List comprehension (recap + filtro)
 
 ```python
