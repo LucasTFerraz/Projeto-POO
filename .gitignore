@@ -22,7 +22,6 @@ notas/notas-aula-16-solucao.ipynb
 # ── Aula 5 · D2·Aula1 — Ponte procedural→OO ────────────────
 # Véspera: remover teaser, publicar.
 # Logo após a aula: remover notebook + exercicios + cheatsheet, publicar.
-pre-aula/teaser-aula-05.md
 notas/notas-aula-05.ipynb
 exercicios/aula-05/
 cheatsheets/ref-poo-basico.md
@@ -39,24 +38,28 @@ dados/aula-06/
 pre-aula/teaser-aula-07.md
 notas/notas-aula-07.ipynb
 exercicios/aula-07/
+cheatsheets/ref-metodos-especiais.md
 dados/aula-07/
 
 # ── Aula 8 · D2·Aula4 — Dataclasses e enums ────────────────
 pre-aula/teaser-aula-08.md
 notas/notas-aula-08.ipynb
 exercicios/aula-08/
+cheatsheets/ref-dataclasses-enums.md
 dados/aula-08/
 
 # ── Aula 9 · D2·Aula5 — Herança e composição ───────────────
 pre-aula/teaser-aula-09.md
 notas/notas-aula-09.ipynb
 exercicios/aula-09/
+cheatsheets/ref-heranca-composicao.md
 dados/aula-09/
 
 # ── Aula 10 · D2·Aula6 — Delegação e polimorfismo ──────────
 pre-aula/teaser-aula-10.md
 notas/notas-aula-10.ipynb
 exercicios/aula-10/
+cheatsheets/ref-polimorfismo-delegacao.md
 dados/aula-10/
 
 # ── Aula 11 · D2·Aula7 — Descriptors ────────────────────────
