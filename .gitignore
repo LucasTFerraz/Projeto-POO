@@ -6,8 +6,6 @@
 
 # ── Notebooks solução — todos bloqueados ──────────────────
 # Remover cada linha 24h após ministrar a aula correspondente.
-notas/notas-aula-05-solucao.ipynb
-notas/notas-aula-06-solucao.ipynb
 notas/notas-aula-07-solucao.ipynb
 notas/notas-aula-08-solucao.ipynb
 notas/notas-aula-09-solucao.ipynb
@@ -19,21 +17,8 @@ notas/notas-aula-14-solucao.ipynb
 notas/notas-aula-15-solucao.ipynb
 notas/notas-aula-16-solucao.ipynb
 
-# ── Aula 6 · D2·Aula2 — Encapsulamento e properties ────────
-notas/notas-aula-06.ipynb
-exercicios/aula-06/
-cheatsheets/ref-encapsulamento.md
-dados/aula-06/
-
-# ── Aula 7 · D2·Aula3 — Métodos especiais (dunder) ─────────
-pre-aula/teaser-aula-07.md
-notas/notas-aula-07.ipynb
-exercicios/aula-07/
-cheatsheets/ref-metodos-especiais.md
-dados/aula-07/
 
 # ── Aula 8 · D2·Aula4 — Dataclasses e enums ────────────────
-pre-aula/teaser-aula-08.md
 notas/notas-aula-08.ipynb
 exercicios/aula-08/
 cheatsheets/ref-dataclasses-enums.md
