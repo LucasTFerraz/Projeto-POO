@@ -6,7 +6,6 @@
 
 # ── Notebooks solução — todos bloqueados ──────────────────
 # Remover cada linha 24h após ministrar a aula correspondente.
-notas/notas-aula-09-solucao.ipynb
 notas/notas-aula-10-solucao.ipynb
 notas/notas-aula-11-solucao.ipynb
 notas/notas-aula-12-solucao.ipynb
@@ -15,14 +14,8 @@ notas/notas-aula-14-solucao.ipynb
 notas/notas-aula-15-solucao.ipynb
 notas/notas-aula-16-solucao.ipynb
 
-# ── Aula 10 · D2·Aula6 — Delegação e polimorfismo ──────────
-notas/notas-aula-10.ipynb
-exercicios/aula-10/
-cheatsheets/ref-polimorfismo-delegacao.md
-dados/aula-10/
 
 # ── Aula 11 · D2·Aula7 — Descriptors ────────────────────────
-pre-aula/teaser-aula-11.md
 notas/notas-aula-11.ipynb
 cheatsheets/ref-descriptors.md
 exercicios/aula-11/
