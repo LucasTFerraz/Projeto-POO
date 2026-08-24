@@ -6,18 +6,11 @@
 
 # ── Notebooks solução — todos bloqueados ──────────────────
 # Remover cada linha 24h após ministrar a aula correspondente.
-notas/notas-aula-13-solucao.ipynb
 notas/notas-aula-14-solucao.ipynb
 notas/notas-aula-15-solucao.ipynb
 notas/notas-aula-16-solucao.ipynb
 
-# ── Aula 14 · D2·Aula10 — Design Patterns II + consolidação ─
-notas/notas-aula-14.ipynb
-exercicios/aula-14/
-dados/aula-14/
-
 # ── Aula 15 · D2·Aula11 — Variabilidade / LPS ──────────────
-pre-aula/teaser-aula-15.md
 notas/notas-aula-15.ipynb
 cheatsheets/ref-variabilidade-lps.md
 exercicios/aula-15/

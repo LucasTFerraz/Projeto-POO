@@ -88,3 +88,49 @@ def criar_robo_configurado(tipo_nome, nome, estrategia_nome="padrao", **kwargs):
 ⚠️ Armadilha: `Robo._registro` só ganha uma entrada depois que o módulo com a
 subclasse é **importado** — arquivo existir no disco não basta, a classe precisa ser
 "vista" pelo Python.
+
+---
+
+## Observer — avisar sozinho quando algo acontece
+
+```python
+class Robo:
+    def notificar(self, evento, **dados):
+        dados.setdefault("robo", self)
+        for obs in self._observadores:
+            obs.atualizar(evento, **dados)
+
+    def avancar(self):
+        if self.sensor_frente():
+            ...
+            return True
+        self.notificar("obstaculo", posicao=(self.x, self.y))   # avisa sozinho
+        return False
+```
+Duck typing de novo: qualquer objeto com `atualizar(evento, **dados)` serve de
+observador, sem herdar de nada em comum além do contrato.
+⚠️ Armadilha: notificar a cada chamada em vez de só na **transição** de estado
+dispara alerta repetido à toa — para `bateria_critica`, cheque o valor **antes** de
+mudar e só notifique se cruzou o limiar agora.
+
+---
+
+## State — cada modo vira uma classe
+
+```python
+class ModoOperacao:
+    def mover(self, robo):
+        raise NotImplementedError
+
+class ModoExplorando(ModoOperacao):
+    def mover(self, robo):
+        return robo.estrategia.mover(robo)   # State delegando pra Strategy
+
+class Robo:
+    def mover(self):
+        return self.modo.mover(self)         # troca comportamento = troca objeto
+```
+Mesma ideia de Strategy, só que trocando "o que o robô pode fazer agora" em vez de
+"como navegar" — os dois padrões compõem sem conflito.
+⚠️ Armadilha: `robo.modo = ModoCarregando` (sem parênteses) guarda a **classe**, não
+uma instância — só quebra na hora de **usar** (`TypeError`), não na atribuição.
