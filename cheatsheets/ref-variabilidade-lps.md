@@ -66,3 +66,43 @@ criar_robo("RoboVeloz", ...)   # resolvido em tempo de EXECUÇÃO (o nome só ch
 ⚠️ Armadilha: "ponto de variação" e "quando ele é resolvido" são perguntas
 diferentes. Herança fixa o catálogo de variantes em tempo de definição, mas ainda
 precisa de uma decisão em runtime pra escolher **qual** instanciar.
+
+---
+
+## Terceira dimensão: tipo de grade
+
+```python
+FABRICA_GRADES = {
+    "vazia": grade_vazia,
+    "moldura": grade_moldura,       # função, não dict pronto — cada instância
+    "labirinto": grade_labirinto,   # precisa do seu PRÓPRIO dicionário
+}
+GRADES_VALIDAS = set(FABRICA_GRADES)
+
+def criar_robo_configurado(tipo_nome, nome, estrategia_nome="padrao", grade_nome="vazia",
+                            **kwargs):
+    validar_configuracao(tipo_nome, estrategia_nome, grade_nome)
+    obstaculos = FABRICA_GRADES[grade_nome]()   # dict NOVO a cada chamada
+    ...
+```
+⚠️ Armadilha: representar cada grade como um dicionário **já pronto** em vez de uma
+função faria todas as instâncias que pedissem aquela grade compartilhar o **mesmo**
+objeto `obstaculos` — mutar um afetaria os outros. Mesma razão do
+`obstaculos=None` + `{}` no `__init__` do `Robo`, desde a Aula 5.
+
+---
+
+## Configuração por dicionário: a fronteira onde dado não confiável entra
+
+```python
+def montar_robo_de_config(config):
+    return criar_robo_configurado(
+        config["tipo_nome"], config["nome"],           # obrigatórios: colchetes
+        estrategia_nome=config.get("estrategia_nome", "padrao"),  # opcionais: .get()
+        grade_nome=config.get("grade_nome", "vazia"),
+        x=config.get("x", 0), y=config.get("y", 0),
+    )
+```
+⚠️ Armadilha: `config["campo_opcional"]` levanta `KeyError` na primeira config que
+não trouxer aquele campo — colchetes são só pros campos sem os quais nada faz
+sentido; todo o resto usa `.get(chave, padrao)`.
