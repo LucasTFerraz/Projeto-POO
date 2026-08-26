@@ -4,10 +4,6 @@
 # a linha correspondente, depois: git add <arquivo> && git commit
 # ============================================================
 
-# ── Notebooks solução — todos bloqueados ──────────────────
-# Remover cada linha 24h após ministrar a aula correspondente.
-notas/notas-aula-16-solucao.ipynb
-
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
