@@ -149,6 +149,12 @@ equipe aprovar o lote o robô pode começar um pedido novo.
   encontrado no lote, quantidade pedida maior que o disponível, pedido vazio. Uma
   hierarquia de duas exceções deixa quem chama decidir se quer tratar os dois casos juntos
   (`except ErroColeta`) ou separado.
+- **De onde vem "o lote" pra validar contra:** o JSON do pedido (Seção 2.6) só traz o
+  *nome* do lote (`"lote": "Lote de Testes #482"`) — a relação codinome→quantidade
+  disponível não é fornecida, você decide e documenta no README como representá-la (ex.:
+  um `dict` no módulo que faz a validação, ou um arquivo próprio em `dados/`). Não é uma
+  peça faltando no esqueleto: `dados/` vem vazia de propósito, os JSONs de exemplo são
+  parte da sua entrega (Seção 5).
 - **Pedido com itens mistos:** se um pedido tiver vários itens e só **um** for inválido
   (ex.: codinome inexistente), decida e documente no README — rejeita o pedido inteiro, ou
   processa os itens válidos e pula o inválido (registrando o motivo, ex. via
