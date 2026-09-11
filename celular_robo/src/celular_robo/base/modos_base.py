@@ -21,7 +21,7 @@
 
 from abc import ABC, abstractmethod
 
-from celular_robo.observadores_base import Observador
+from celular_robo.src.celular_robo.base.observadores_base import Observador
 
 
 class ModoOperacao(ABC):

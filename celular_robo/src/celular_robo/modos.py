@@ -7,3 +7,14 @@
 # TODO: implemente aqui. A transição ModoColetando -> ModoAguardandoVerificacao
 # acontece via Observer (não é o próprio modo que decide sozinho), quando a
 # bandeja completa.
+from celular_robo.src.celular_robo.base.modos_base import ModoOperacao
+
+class ModoAguardandoVerificacao(ModoOperacao):
+    def mover(self, robo):
+        pass
+
+class ModoColetando(ModoOperacao):
+    def mover(self, robo):
+        pass
+
+    

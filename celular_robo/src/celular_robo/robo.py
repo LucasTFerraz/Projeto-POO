@@ -12,3 +12,10 @@
 #   em robo_base.py), validando que a quantidade coletada de um item nunca é
 #   negativa nem passa do pedido.
 # - __str__/__repr__ (robô) e __len__ (bandeja — quantos itens já coletados).
+from celular_robo.src.celular_robo.base.robo_base import Robo,Coordenada
+
+class QuantidadeValida():
+    pass
+class RoboColetor(Robo):
+    def __init__(self):
+        pass

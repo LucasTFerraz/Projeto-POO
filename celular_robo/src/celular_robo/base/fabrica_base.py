@@ -10,7 +10,7 @@
 # padrão — os dois são aceitos. `criar_robo_configurado` (que combina isso
 # com a validação do modelo de features) é todo seu, vai em fabrica.py.
 
-from celular_robo.robo_base import Robo
+from celular_robo.src.celular_robo.base.robo_base import Robo
 
 
 def criar_robo(tipo_nome, nome, **kwargs):

@@ -20,9 +20,9 @@
 
 from enum import Enum
 
-from celular_robo.comandos_base import ComandoParar, parse_comando
-from celular_robo.estrategias_base import EstrategiaPadrao
-from celular_robo.modos_base import ModoCarregando, ModoExplorando
+from celular_robo.src.celular_robo.base.comandos_base import ComandoParar, parse_comando
+from celular_robo.src.celular_robo.base.estrategias_base import EstrategiaPadrao
+from celular_robo.src.celular_robo.base.modos_base import ModoCarregando, ModoExplorando
 
 
 class Coordenada:

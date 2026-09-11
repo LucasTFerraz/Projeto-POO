@@ -6,3 +6,9 @@
 # TODO: implemente aqui. Considere uma base comum (RotaColeta) com
 # __init_subclass__ registrando cada rota, ver Seção 2.2 (metaprogramação
 # aplicada a uma segunda hierarquia).
+
+class RotaDireta ():
+    def __init_subclass__(cls):
+        pass
+    def __init__(self):
+        pass

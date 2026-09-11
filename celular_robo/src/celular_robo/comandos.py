@@ -7,3 +7,11 @@
 # TODO: implemente aqui. ComandoColeta(Comando): __init__(codinome, posicao,
 # quantidade), com .executar(robo) e .desfazer(robo) (remove o item da
 # bandeja, decrementa a contagem coletada).
+from abc import ABC
+
+from celular_robo.src.celular_robo.base.comandos_base import Comando
+
+
+class ComandoColeta(Comando):
+    def executar(self,robo):
+        pass
