@@ -43,5 +43,6 @@ class QuantidadeValida:
         #     f"{"abaixo da qualidade aceitavel" if valor<100 else "com valor de qualidade invalido"}")
         instance.__dict__[self.nome] = valor
 class RoboColetor(Robo):
-    def __init__(self,capacidade = 100):
+    def __init__(self,capacidade = 100,**kwargs):
+        super().__init__(**kwargs)
         self.capacidade = capacidade

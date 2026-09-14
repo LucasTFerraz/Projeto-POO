@@ -11,20 +11,26 @@
 #
 #   criar_robo_configurado(tipo_nome, nome, estrategia_nome=..., area_nome=...)
 
-from src.celular_robo.robo import RoboColetor
-from src.celular_robo.excecoes import *
-from src.celular_robo.base.robo_base import Robo
+from celular_robo.src.celular_robo.robo import RoboColetor
+from celular_robo.src.celular_robo.excecoes import *
+from celular_robo.src.celular_robo.base.robo_base import Robo
 
-def criar_robo_coletor(tipo_nome,nome, estrategia_nome,area_nome,**kwargs):
-    if area_nome == "area_quarentena" and estrategia_nome == "direta":
-        raise ConfiguracaoInvalida("Combinação de area e rota não permitida")
-    return RoboColetor(nome,**kwargs)
+def criar_robo_coletor(tipo_nome,nome, estrategia_nome,area_nome):
+    if area_nome == "area_quarentena":
+        if  estrategia_nome == "direta":
+            raise ConfiguracaoInvalida("Combinação de area e rota não permitida")
+        else:
+            area = [(4,4)]
+            return RoboColetor(nome=nome,obstaculos= [(4,4)])
+    else:
+        return RoboColetor(nome=nome)
 
-def criar_robo_configurado(tipo_nome,nome,estrategia_nome="Padrao",area_nome="Padrao",**kwargs):
+def criar_robo_configurado(tipo_nome,nome,estrategia_nome="Padrao",area_nome="Padrao"):
+    Robo._registro.get(tipo_nome)
+    if tipo_nome is None:
+        return ConfiguracaoInvalida("Tipo de robo invalido")
     match(tipo_nome):
         case "RoboColetor":
-            return criar_robo_coletor(tipo_nome,nome,estrategia_nome,area_nome,**kwargs)
+            return criar_robo_coletor(tipo_nome,nome,estrategia_nome,area_nome)
         case "Robo":
             return Robo(nome)
-        case _:
-            raise ConfiguracaoInvalida("Tipo de robo invalido")

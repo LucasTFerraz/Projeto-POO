@@ -8,8 +8,9 @@
 
 import pytest
 
-from celular_robo.src.celular_robo.fabrica import criar_robo_configurado
 from celular_robo.src.celular_robo.excecoes import ConfiguracaoInvalida
+from celular_robo.src.celular_robo.fabrica import criar_robo_configurado
+
 
 
 @pytest.fixture
