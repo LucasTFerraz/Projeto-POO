@@ -10,8 +10,20 @@
 from abc import ABC
 
 from celular_robo.src.celular_robo.base.comandos_base import Comando
+from celular_robo.src.celular_robo.base.robo_base import Robo
+from celular_robo.src.celular_robo.estrategias import RotaColeta
 
 
 class ComandoColeta(Comando):
-    def executar(self,robo):
-        pass
+    def __init__(self,rota:RotaColeta,objetos:List):
+        self.rota = rota
+        self.obj = objetos
+        self.rotaAlternativa = None
+        super().__init__()
+    def executar(self,robo:Robo):
+        
+        while(len(self.obj)>0):
+            self.obj = self.rota.coletar(self.obj)
+            self.rota.mover(robo)
+            self.rota.depositar()
+            self.rota.voltar(robo)

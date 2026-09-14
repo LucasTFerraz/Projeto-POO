@@ -10,5 +10,8 @@ class ErroColeta(Exception):
 class ConfiguracaoInvalida(ErroColeta):
     pass
 
+class QualidadeBaixa(ErroColeta):
+    pass
+
 class PedidoInvalido(ErroColeta):
     pass
