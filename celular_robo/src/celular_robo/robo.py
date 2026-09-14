@@ -15,11 +15,17 @@
 from celular_robo.src.celular_robo.base.robo_base import Robo,Coordenada
 from celular_robo.src.celular_robo.excecoes import QualidadeBaixa
 
+def return100():
+     return 100
+def returnX(x):
+     return x
+
 class QuantidadeValida:
-    def checarQualidade(self,q):
-        if q<self.minimo: 
+    def checarQualidade(self,q,checagem:function):
+        qualidade = checagem(q)
+        if qualidade<self.minimo: 
                     raise QualidadeBaixa(f"Qualidade {q} esta abaixo de {self.minimo}")
-        elif q>100: 
+        elif qualidade>100: 
             raise ValueError(f"valor {q} esta fora do limite maximo 100")
     def __init__(self, minimo):
         if not (self.minimo <= minimo <= 100): raise ValueError(

@@ -20,7 +20,8 @@ areas = {
     "centro_padrao":None
 }
 sinonimos = {
-    "direta" : "RotaDireta"
+    "direta" : "RotaDireta","DuplaConferencia" : "RotaComDuplaConferencia",
+    "obstaculo" : "RotaComDuplaConferencia"
 }
 
 def criar_robo_coletor(tipo_nome,nome, estrategia_nome,area_nome):
@@ -28,11 +29,8 @@ def criar_robo_coletor(tipo_nome,nome, estrategia_nome,area_nome):
     if area_nome == "area_quarentena":
         if  estrategia_nome == "RotaDireta":
             raise ConfiguracaoInvalida("Combinação de area e rota não permitida")
-        else:
-            area = [(4,4)]
-            return RoboColetor(nome=nome,obstaculos= [(4,4)])
-    else:
-        return RoboColetor(nome=nome)
+        else: return RoboColetor(nome=nome,obstaculos= areas[area_nome])
+    else: return RoboColetor(nome=nome)
 
 def criar_robo_configurado(tipo_nome,nome,estrategia_nome="RotaDireta",area_nome="centro_padrao"):
     if estrategia_nome in sinonimos: estrategia_nome = sinonimos[estrategia_nome]
