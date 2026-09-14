@@ -13,7 +13,12 @@
 
 from celular_robo.src.celular_robo.robo import RoboColetor
 from celular_robo.src.celular_robo.excecoes import *
+from celular_robo.src.celular_robo.estrategias import RotaColeta
 from celular_robo.src.celular_robo.base.robo_base import Robo
+areas = {
+    "area_quarentena":[(4,4)],
+    "centro_padrao":None
+}
 
 def criar_robo_coletor(tipo_nome,nome, estrategia_nome,area_nome):
     if tipo_nome != "RoboColetor": raise ConfiguracaoInvalida("Tipo de robo invalido")
@@ -26,10 +31,12 @@ def criar_robo_coletor(tipo_nome,nome, estrategia_nome,area_nome):
     else:
         return RoboColetor(nome=nome)
 
-def criar_robo_configurado(tipo_nome,nome,estrategia_nome="Padrao",area_nome="Padrao"):
+def criar_robo_configurado(tipo_nome,nome,estrategia_nome="RotaDireta",area_nome="area_quarentena"):
     Robo._registro.get(tipo_nome)
-    if tipo_nome is None:
-        raise ConfiguracaoInvalida("Tipo de robo invalido")
+    RotaColeta._registro_rotas.get(estrategia_nome)
+    if estrategia_nome is None: raise ConfiguracaoInvalida("Tipo de rota invalido")
+    if tipo_nome is None: raise ConfiguracaoInvalida("Tipo de robo invalido")
+    if area_nome not in areas: raise ConfiguracaoInvalida("Area desconhecida")
     match(tipo_nome):
         case "RoboColetor": return criar_robo_coletor(tipo_nome,nome,estrategia_nome,area_nome)
         case "Robo": return Robo(nome)

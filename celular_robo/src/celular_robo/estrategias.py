@@ -7,35 +7,15 @@
 # __init_subclass__ registrando cada rota, ver Seção 2.2 (metaprogramação
 # aplicada a uma segunda hierarquia).
 from abc import ABC,abstractmethod
-from src.celular_robo.base.estrategias_base import EstrategiaEsquiva,EstrategiaPadrao,EstrategiaZigzag
-from src.celular_robo.base.robo_base import Robo,Direcao
-from src.celular_robo.robo import QuantidadeValida
-from src.celular_robo.excecoes import QualidadeBaixa,ErroColeta
+from celular_robo.src.celular_robo.base.estrategias_base import EstrategiaEsquiva,EstrategiaPadrao,EstrategiaZigzag
+from celular_robo.src.celular_robo.base.robo_base import Robo,Direcao
+from celular_robo.src.celular_robo.robo import QuantidadeValida
+from celular_robo.src.celular_robo.excecoes import QualidadeBaixa,ErroColeta
 
 class RotaColeta(ABC):
     _registro_rotas = {}
-    def mover(self, robo:Robo):
-        robo.girar_ate(self._direcaoX)
-        while(robo.posicao[0]<self._dx):
-            if not self.est.mover(robo):
-                self.desvios.append(robo.posicao)
-                self.est = EstrategiaEsquiva()
-                if self.est.mover(robo): 
-                    
-                    self.est = EstrategiaPadrao()
-                else: raise ErroColeta("Rota Impossivel")
-                robo.girar_ate(self._direcaoX)
-        robo.girar_ate(self._direcaoY)
-        while(robo.posicao[1]<self._dy):
-            if not self.est.mover(robo):
-                self.desvios.append(robo.posicao)
-                self.est = EstrategiaEsquiva()
-                if self.est.mover(robo): 
-                    self.est = EstrategiaPadrao()
-                else: raise ErroColeta("Rota Impossivel")
-                robo.girar_ate(self._direcaoX)
-        #if robo.esta_na_borda
-        EstrategiaPadrao
+    @abstractmethod
+    def mover(self, robo:Robo,):...
     def depositar(self,robo): self.carga = []
     def __init_subclass__(cls, categoria="geral", **kwargs):
         super().__init_subclass__(**kwargs)
@@ -72,19 +52,42 @@ class RotaDireta (RotaColeta):
     # def coletar(self,objetos):
     #     self.carga = objetos
     #     return []
+    def mover(self, robo:Robo):
+        robo.girar_ate(self._direcaoX)
+        while(robo.posicao[0]<self._dx):
+            if not self.est.mover(robo): raise ErroColeta("Rota Impossivel")
+        robo.girar_ate(self._direcaoY)
+        while(robo.posicao[0]<self._dy):
+            if not self.est.mover(robo): raise ErroColeta("Rota Impossivel")
     def depositar(self,robo): 
         self.carga = []
         return 0
 
 class RotaComDuplaConferencia (RotaColeta):
-    # def coletar(self,objetos:list):#retira soment eum objeto ao invez de todos
-    #     self.carga = objetos.pop(0)
-    #     return objetos
+    def mover(self, robo:Robo):
+        robo.girar_ate(self._direcaoX)
+        while(robo.posicao[0]<self._dx):
+            if not self.est.mover(robo):
+                self.desvios.append(robo.posicao)
+                self.est = EstrategiaEsquiva()
+                if self.est.mover(robo): 
+                    
+                    self.est = EstrategiaPadrao()
+                else: raise ErroColeta("Rota Impossivel")
+                robo.girar_ate(self._direcaoX)
+        robo.girar_ate(self._direcaoY)
+        while(robo.posicao[1]<self._dy):
+            if not self.est.mover(robo):
+                self.desvios.append(robo.posicao)
+                self.est = EstrategiaEsquiva()
+                if self.est.mover(robo): 
+                    self.est = EstrategiaPadrao()
+                else: raise ErroColeta("Rota Impossivel")
+                robo.girar_ate(self._direcaoX)
     def depositar(self,robo:Robo): 
         fails = 0
         while (len(self.carga)>0):
             o = self.carga.pop(0)
-
             try:self.qualidadeMinima.checarQualidade(o)
             except QualidadeBaixa as e: 
                 fails+=1
@@ -93,3 +96,28 @@ class RotaComDuplaConferencia (RotaColeta):
                 fails+=1
                 robo.notificar("Object invalid quality")
         self.carga 
+
+class ObstaculoDuplaConferencia(RotaComDuplaConferencia):
+    pass
+    # def mover(self, robo:Robo):
+    #     robo.girar_ate(self._direcaoX)
+    #     while(robo.posicao[0]<self._dx):
+    #         if not self.est.mover(robo):
+    #             self.desvios.append(robo.posicao)
+    #             self.est = EstrategiaEsquiva()
+    #             if self.est.mover(robo): 
+                    
+    #                 self.est = EstrategiaPadrao()
+    #             else: raise ErroColeta("Rota Impossivel")
+    #             robo.girar_ate(self._direcaoX)
+    #     robo.girar_ate(self._direcaoY)
+    #     while(robo.posicao[1]<self._dy):
+    #         if not self.est.mover(robo):
+    #             self.desvios.append(robo.posicao)
+    #             self.est = EstrategiaEsquiva()
+    #             if self.est.mover(robo): 
+    #                 self.est = EstrategiaPadrao()
+    #             else: raise ErroColeta("Rota Impossivel")
+    #             robo.girar_ate(self._direcaoX)
+    #     #if robo.esta_na_borda
+    #     EstrategiaPadrao
