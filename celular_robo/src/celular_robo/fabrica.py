@@ -19,11 +19,14 @@ areas = {
     "area_quarentena":[(4,4)],
     "centro_padrao":None
 }
+sinonimos = {
+    "direta" : "RotaDireta"
+}
 
 def criar_robo_coletor(tipo_nome,nome, estrategia_nome,area_nome):
     if tipo_nome != "RoboColetor": raise ConfiguracaoInvalida("Tipo de robo invalido")
     if area_nome == "area_quarentena":
-        if  estrategia_nome == "direta":
+        if  estrategia_nome == "RotaDireta":
             raise ConfiguracaoInvalida("Combinação de area e rota não permitida")
         else:
             area = [(4,4)]
@@ -31,10 +34,11 @@ def criar_robo_coletor(tipo_nome,nome, estrategia_nome,area_nome):
     else:
         return RoboColetor(nome=nome)
 
-def criar_robo_configurado(tipo_nome,nome,estrategia_nome="RotaDireta",area_nome="area_quarentena"):
+def criar_robo_configurado(tipo_nome,nome,estrategia_nome="RotaDireta",area_nome="centro_padrao"):
+    if estrategia_nome in sinonimos: estrategia_nome = sinonimos[estrategia_nome]
     Robo._registro.get(tipo_nome)
     RotaColeta._registro_rotas.get(estrategia_nome)
-    if estrategia_nome is None: raise ConfiguracaoInvalida("Tipo de rota invalido")
+    if RotaColeta._registro_rotas.get(estrategia_nome) is None: raise ConfiguracaoInvalida("Tipo de rota invalido")
     if tipo_nome is None: raise ConfiguracaoInvalida("Tipo de robo invalido")
     if area_nome not in areas: raise ConfiguracaoInvalida("Area desconhecida")
     match(tipo_nome):

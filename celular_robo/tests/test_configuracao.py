@@ -10,7 +10,7 @@ from celular_robo.src.celular_robo.fabrica import criar_robo_configurado
 
 def test_robo_padrao_comeca_na_origem():
     robo_novo = criar_robo_configurado("RoboColetor", "Coletor-3",)
-    robo_novo2 = criar_robo_configurado("RoboColetor", "Coletor-3",estrategia_nome="RotaObstaculoComDuplaConferencia")
+    robo_novo2 = criar_robo_configurado("RoboColetor", "Coletor-4",estrategia_nome="RotaComDuplaConferencia")
     assert (robo_novo.x, robo_novo.y) == (0, 0)
 
 
