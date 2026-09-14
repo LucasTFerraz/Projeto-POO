@@ -53,26 +53,31 @@ class RotaDireta (RotaColeta):
     #     self.carga = objetos
     #     return []
     def mover(self, robo:Robo):
+        def mover_para(p,d):
+            while(robo.posicao[p]<d):
+                if not self.est.mover(robo): raise ErroColeta("Rota Impossivel")
         robo.girar_ate(self._direcaoX)
-        while(robo.posicao[0]<self._dx):
-            if not self.est.mover(robo): raise ErroColeta("Rota Impossivel")
+        mover_para(0,self.dx)
         robo.girar_ate(self._direcaoY)
-        while(robo.posicao[0]<self._dy):
-            if not self.est.mover(robo): raise ErroColeta("Rota Impossivel")
+        mover_para(1,self.dy)
     def depositar(self,robo): 
         self.carga = []
         return 0
 
 class RotaComDuplaConferencia (RotaColeta):
+    
     def mover(self, robo:Robo):
+        def mover_para(p,d):
+            while(robo.posicao[p]<d):
+                if not self.est.mover(robo): robo.x 
+        def _desviar():
+            pass
         robo.girar_ate(self._direcaoX)
         while(robo.posicao[0]<self._dx):
             if not self.est.mover(robo):
                 self.desvios.append(robo.posicao)
                 self.est = EstrategiaEsquiva()
-                if self.est.mover(robo): 
-                    
-                    self.est = EstrategiaPadrao()
+                if self.est.mover(robo): self.est = EstrategiaPadrao()
                 else: raise ErroColeta("Rota Impossivel")
                 robo.girar_ate(self._direcaoX)
         robo.girar_ate(self._direcaoY)
