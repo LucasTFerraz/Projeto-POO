@@ -1,9 +1,10 @@
 from random import random as r,randint
-def return100():
+
+def valor100():
      return 100
-def returnX(x):
+def valor_X(x):
      return x
-def randomX(max):
-     return r()*max
-def randomB(x,y):
+def aleatorio_X(x):
+     return r()*x
+def aleatorioEntre(x,y):
      return randint(x,y)

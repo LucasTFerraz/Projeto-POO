@@ -12,23 +12,20 @@
 #   em robo_base.py), validando que a quantidade coletada de um item nunca é
 #   negativa nem passa do pedido.
 # - __str__/__repr__ (robô) e __len__ (bandeja — quantos itens já coletados).
+
+from collections.abc import Callable
 from celular_robo.src.celular_robo.base.robo_base import Robo,Coordenada
 from celular_robo.src.celular_robo.excecoes import QualidadeBaixa
 
-def return100():
-     return 100
-def returnX(x):
-     return x
-
 class QuantidadeValida:
-    def checarQualidade(self,q,checagem:function):
+    def checarQualidade(self,q,checagem:Callable):
         qualidade = checagem(q)
         if qualidade<self.minimo: 
                     raise QualidadeBaixa(f"Qualidade {q} esta abaixo de {self.minimo}")
         elif qualidade>100: 
             raise ValueError(f"valor {q} esta fora do limite maximo 100")
     def __init__(self, minimo):
-        if not (self.minimo <= minimo <= 100): raise ValueError(
+        if not (0 <= minimo <= 100): raise ValueError(
             f"valor minimo {minimo} esta fora do limite de 0 a 100")
         self.minimo = minimo
 
@@ -37,12 +34,11 @@ class QuantidadeValida:
         self.nome = "_" + name
 
     def __get__(self, instance, owner):
-        if instance is None:
-            return self
+        if instance is None: return self
         return instance.__dict__[self.nome]
 
     def __set__(self, instance, valor):
-        if not (self.minimo <= valor <= 100): raise ValueError(
+        if not (0 <= valor <= 100): raise ValueError(
             f"valor minimo {valor} esta fora do limite de 0 a 100")
              #raise ValueError(
         #     f"{self.nome_publico}={valor} esta "

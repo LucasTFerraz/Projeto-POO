@@ -2,6 +2,7 @@
 name = "projeto-poo"
 version = "0.1.0"
 description = ""
+pythonpath = ["src"]
 authors = [
     {name = "LucasTFerraz",email = "ltf@hotmail.com"}
 ]

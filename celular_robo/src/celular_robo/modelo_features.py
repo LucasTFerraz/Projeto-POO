@@ -4,3 +4,17 @@
 # registros de Seção 2.2, não digitados à mão), REQUER/EXCLUI (4 dimensões: tipo,
 # estratégia, área, urgência) e validar_configuracao levantando
 # ConfiguracaoInvalida antes de qualquer robô ser instanciado.
+class TIPOS_VALIDOS():
+    def executar(self,robo):
+        pass
+
+class REQUER():
+    def executar(self,robo):
+        pass
+
+class EXCLUI():
+    def executar(self,robo):
+        pass
+
+class validar_configuracao():
+    pass
